@@ -13,8 +13,17 @@ export class Preloads extends Phaser.Scene {
     this.load.image("phaser_logo", "public/assets/images/titulo.png");
     this.load.image(
       "mainmenu_bg",
+      "public/assets/images/espaciojfE.png"
+    );
+    this.load.image(
       "Sound_bg",
+      "public/assets/images/espaciojfE.png"
+    );
+    this.load.image(
       "Puntajes_bg",
+      "public/assets/images/espaciojfE.png"
+    );
+    this.load.image(
       "Creditos_bg",
       "public/assets/images/espaciojfE.png"
     );
@@ -25,7 +34,13 @@ export class Preloads extends Phaser.Scene {
     this.load.image("disparo", "public/assets/images/disparo.png")
     this.load.image("reloj", "public/assets/images/reloj.png")
     this.load.image("logo", "public/assets/images/titulo.png")
-  
+    this.load.image("panel1", "public/assets/images/nivelC.png")
+    this.load.image("sr", "public/assets/images/sala rocosa.png")
+    this.load.image("panel2", "public/assets/images/SR completada.png")
+    this.load.image("panel3", "public/assets/images/nivelF.png")
+    this.load.image("sp2", "public/assets/images/spaceN2.png")
+    this.load.image("estrellasN2", "public/assets/images/ESTRELLASN2.png")
+    
     
     
     
@@ -35,13 +50,3 @@ export class Preloads extends Phaser.Scene {
     this.scene.start("MainMenu");
   }
 }
-this.scene.start("Sound");
-  }
-}
-his.scene.start("Puntajes");
-  }
-}
-his.scene.start("Creditos");
-  }
-}
-
