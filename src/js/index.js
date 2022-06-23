@@ -1,5 +1,6 @@
 import { Preloads } from "../scenes/preloads.js";
 import { MainMenu } from "../scenes/mainmenu.js";
+import { Play } from "../scenes/play.js";
 
 var config = {
   type: Phaser.AUTO,
@@ -20,13 +21,13 @@ var config = {
   physics: {
     default: "arcade",
     arcade: {
-      gravity: { y: 300 },
+      gravity: { y: 0 },
       debug: false,
     },
   },
   // Listado de todas las escenas del juego, en orden
   // La primera escena es con la cual empieza el juego
-  scene: [Preloads, MainMenu],
+  scene: [Preloads, MainMenu,Play],
 };
 
 var game = new Phaser.Game(config);

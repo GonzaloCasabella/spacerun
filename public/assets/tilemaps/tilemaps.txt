@@ -1,4 +1,0 @@
-Directorio de tilemaps:
-JSON para importar a PHASER
-PNG de imagenes de tiles
-TMX de fuente de edicion del mapa
