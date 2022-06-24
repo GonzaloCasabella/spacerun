@@ -19,7 +19,7 @@ export class Play2 extends Phaser.Scene {
     this.space=this.add.image(0,0,"sp2").setOrigin(0)
     this.stars=this.add.tileSprite(this.cameras.main.centerX,this.cameras.main.centerY,800,600,"estrellasN2")
     this.player=this.physics.add.sprite(100,this.cameras.main.centerY,"personaje").setScale(0.3)
-    this.scoretext=this.add.text(96,16,"score: 0",{fontSize:"28px",fill:"#fff", fontFamily: 'Fun Games'})
+    this.scoretext=this.add.text(96,16,"score: 0",{fontSize:"28px",fill:"#fff", fontFamily: 'Advanced Pixel LCD-7K'})
     this.timertext=this.add.text(55,16, "", {fontSize:"28px",fill:"#F4F80D", fontFamily: 'Fun Games'})
     this.player.allowGravity =false
     this.player.immovable=true

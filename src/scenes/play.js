@@ -13,7 +13,7 @@ export class Play extends Phaser.Scene {
   
 
   create() {
-    this.timercount=50
+    this.timercount=20
     this.speed=1
     this.score=0
     this.cursors=this.input.keyboard.createCursorKeys()
@@ -21,7 +21,7 @@ export class Play extends Phaser.Scene {
     this.space=this.add.image(0,2,"titulo").setOrigin(0)
     this.stars=this.add.tileSprite(this.cameras.main.centerX,this.cameras.main.centerY,800,600,"estrellas")
     this.player=this.physics.add.sprite(100,this.cameras.main.centerY,"personaje").setScale(0.3)
-    this.scoretext=this.add.text(96,16,"score: 0",{fontSize:"28px",fill:"#fff", fontFamily: 'Fun Games'})
+    this.scoretext=this.add.text(96,16,"score: 0",{fontSize:"28px",fill:"#fff", fontFamily: 'Advanced Pixel LCD-7K'})
     this.timertext=this.add.text(55,16, "", {fontSize:"28px",fill:"#f00", fontFamily: 'Fun Games'})
     this.player.allowGravity =false
     this.player.immovable=true
@@ -73,7 +73,7 @@ this.physics.add.overlap(this.player,this.asteroides,this.choque,null,this)
     if (this.timercount>=0) {
       this.timertext.text=this.timercount
     } else {
-      if (this.score>=15) {
+      if (this.score>=5) {
         this.panel.visible=true
       this.boton.visible=true
       } else {

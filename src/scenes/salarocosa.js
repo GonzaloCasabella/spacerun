@@ -13,13 +13,13 @@ export class Salarocosa extends Phaser.Scene {
   
 
   create() {
-    this.timercount=10
+    this.timercount=30
     this.speed=1
     this.score=0
     this.cursors=this.input.keyboard.createCursorKeys()
     this.space=this.add.tileSprite(this.cameras.main.centerX,this.cameras.main.centerY,800,600,"sr")
     this.player=this.physics.add.sprite(this.cameras.main.centerX,50,"personaje").setScale(0.3)
-    this.scoretext=this.add.text(96,16,"score: 0",{fontSize:"28px",fill:"#000", fontFamily: 'Fun Games'})
+    this.scoretext=this.add.text(99,16,"score: 0",{fontSize:"14px",fill:"#000", fontFamily: 'Advanced Pixel LCD-7'})
     this.timertext=this.add.text(55,16, "", {fontSize:"28px",fill:"#f00", fontFamily: 'Fun Games'})
     this.player.allowGravity =false
     this.player.immovable=true

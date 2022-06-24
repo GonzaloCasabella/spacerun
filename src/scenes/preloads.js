@@ -40,7 +40,7 @@ export class Preloads extends Phaser.Scene {
     this.load.image("panel3", "public/assets/images/nivelF.png")
     this.load.image("sp2", "public/assets/images/spaceN2.png")
     this.load.image("estrellasN2", "public/assets/images/ESTRELLASN2.png")
-    
+    this.load.image("Creditos", "public/assets/images/endgame.png")
     
     
     
