@@ -12,7 +12,7 @@ export class Play2 extends Phaser.Scene {
   
 
   create() {
-    this.timercount=50
+    this.timercount=70
     this.speed=1
     this.score=0
     this.cursors=this.input.keyboard.createCursorKeys()
@@ -21,6 +21,7 @@ export class Play2 extends Phaser.Scene {
     this.player=this.physics.add.sprite(100,this.cameras.main.centerY,"personaje").setScale(0.3)
     this.scoretext=this.add.text(96,16,"score: 0",{fontSize:"28px",fill:"#fff", fontFamily: 'Advanced Pixel LCD-7K'})
     this.timertext=this.add.text(55,16, "", {fontSize:"28px",fill:"#F4F80D", fontFamily: 'Fun Games'})
+    this.add.text(this.cameras.main.centerX*2,16,"DESTRUIR 40 ASTEROIDES PARA AVANZAR",{fontSize:"18px",fill:"#fff",fontFamily:"Advanced Pixel LCD-7K"}).setOrigin(1.1,0)
     this.player.allowGravity =false
     this.player.immovable=true
     this.player.body.moves=false
@@ -32,7 +33,7 @@ export class Play2 extends Phaser.Scene {
       asteroide.body.moves=false
       asteroide.setDepth(1)
       }
-    },2000)
+    },300)
     this.disparos=this.physics.add.group()
     setInterval(()=>{
       if (this.cursors.space.isDown) {
@@ -50,8 +51,8 @@ this.physics.add.overlap(this.player,this.asteroides,this.choque,null,this)
     this.panel=this.add.image(this.cameras.main.centerX,this.cameras.main.centerY,"panel1").setActive(false)
     this.panel.visible=false
     this.panel.setDepth(2)
-    this.boton=new Button(this.cameras.main.centerX, this.cameras.main.centerY+45, "Sala Rocosa", this, ()=>{
-      this.scene.start("sala rocosa")
+    this.boton=new Button(this.cameras.main.centerX, this.cameras.main.centerY+45, "Creditos", this, ()=>{
+      this.scene.start("Creditos")
     }).button
     this.boton.visible=false
     this.boton.setDepth(3).setScale(0.4)
@@ -60,7 +61,7 @@ this.physics.add.overlap(this.player,this.asteroides,this.choque,null,this)
     this.panelF.visible=false
     this.panelF.setDepth(2)
     this.botonF=new Button(this.cameras.main.centerX, this.cameras.main.centerY+45, "Reintentar", this, ()=>{
-      this.scene.start("Play")
+      this.scene.start("Play2")
     }).button
     this.botonF.visible=false
     this.botonF.setDepth(3).setScale(0.4)
@@ -71,7 +72,7 @@ this.physics.add.overlap(this.player,this.asteroides,this.choque,null,this)
     if (this.timercount>=0) {
       this.timertext.text=this.timercount
     } else {
-      if (this.score>=15) {
+      if (this.score>=40) {
         this.panel.visible=true
       this.boton.visible=true
       } else {
@@ -79,7 +80,7 @@ this.physics.add.overlap(this.player,this.asteroides,this.choque,null,this)
       this.botonF.visible=true
       }
       return}
-    this.stars.tilePositionX += this.speed
+    this.stars.tilePositionX += this.speed*2
     if (this.cursors.up.isDown) {
       this.player.y -= 3
     }
@@ -88,7 +89,7 @@ this.physics.add.overlap(this.player,this.asteroides,this.choque,null,this)
     }
 
     this.asteroides.children.iterate(element => {
-      element.x-=this.speed*4
+      element.x-=this.speed*8
     });
     
     this.scoretext.text="score: "+this.score

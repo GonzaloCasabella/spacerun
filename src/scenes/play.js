@@ -13,7 +13,7 @@ export class Play extends Phaser.Scene {
   
 
   create() {
-    this.timercount=20
+    this.timercount=60
     this.speed=1
     this.score=0
     this.cursors=this.input.keyboard.createCursorKeys()
@@ -74,7 +74,7 @@ this.physics.add.overlap(this.player,this.asteroides,this.choque,null,this)
     if (this.timercount>=0) {
       this.timertext.text=this.timercount
     } else {
-      if (this.score>=5) {
+      if (this.score>=20) {
         this.panel.visible=true
       this.boton.visible=true
       } else {

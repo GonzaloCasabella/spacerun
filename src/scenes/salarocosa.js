@@ -13,7 +13,7 @@ export class Salarocosa extends Phaser.Scene {
   
 
   create() {
-    this.timercount=30
+    this.timercount=90
     this.speed=1
     this.score=0
     this.cursors=this.input.keyboard.createCursorKeys()
