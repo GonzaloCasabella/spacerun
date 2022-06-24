@@ -23,6 +23,7 @@ export class Play extends Phaser.Scene {
     this.player=this.physics.add.sprite(100,this.cameras.main.centerY,"personaje").setScale(0.3)
     this.scoretext=this.add.text(96,16,"score: 0",{fontSize:"28px",fill:"#fff", fontFamily: 'Advanced Pixel LCD-7K'})
     this.timertext=this.add.text(55,16, "", {fontSize:"28px",fill:"#f00", fontFamily: 'Fun Games'})
+    this.add.text(this.cameras.main.centerX*2,16,"DESTRUIR 20 ASTEROIDES PARA AVANZAR",{fontSize:"18px",fill:"#fff",fontFamily:"Advanced Pixel LCD-7K"}).setOrigin(1.1,0)
     this.player.allowGravity =false
     this.player.immovable=true
     this.player.body.moves=false

@@ -25,7 +25,7 @@ export class Preloads extends Phaser.Scene {
     );
     this.load.image(
       "Creditos_bg",
-      "public/assets/images/espaciojfE.png"
+      "public/assets/images/endgame.png"
     );
     this.load.image("fondo_juego", "public/assets/images/espaciojf.png")
     this.load.image("estrellas", "public/assets/images/ESTRELLAS.png")

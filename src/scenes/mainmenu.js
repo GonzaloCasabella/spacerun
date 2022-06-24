@@ -33,7 +33,7 @@ export class MainMenu extends Phaser.Scene {
       this.scene.start("estadistica")
     })
     new Button(this.cameras.main.centerX, this.cameras.main.centerY+150, "Creditos", this, ()=>{
-      this.scene.start("endgame")
+      this.scene.start("Creditos")
     })
   }
 }
