@@ -26,13 +26,7 @@ export class MainMenu extends Phaser.Scene {
     new Button(this.cameras.main.centerX, this.cameras.main.centerY, "Comenzar", this, ()=>{
       this.scene.start("Play")
     })
-    new Button(this.cameras.main.centerX, this.cameras.main.centerY+50, "Sonido", this, ()=>{
-      this.scene.start("sound")
-    })
-    new Button(this.cameras.main.centerX, this.cameras.main.centerY+100, "Puntajes", this, ()=>{
-      this.scene.start("estadistica")
-    })
-    new Button(this.cameras.main.centerX, this.cameras.main.centerY+150, "Creditos", this, ()=>{
+    new Button(this.cameras.main.centerX, this.cameras.main.centerY+50, "Creditos", this, ()=>{
       this.scene.start("Creditos")
     })
   }
