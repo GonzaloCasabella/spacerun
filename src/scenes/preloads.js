@@ -41,12 +41,34 @@ export class Preloads extends Phaser.Scene {
     this.load.image("sp2", "public/assets/images/spaceN2.png")
     this.load.image("estrellasN2", "public/assets/images/ESTRELLASN2.png")
     this.load.image("Creditos", "public/assets/images/endgame.png")
-    
-    
-    
+    this.load.spritesheet("navemotor","public/assets/images/animacion/navemotor.png",{frameWidth:104,frameHeight:109})
+    this.load.spritesheet("asteroto","public/assets/images/animacion/asteroto.png",{frameWidth:94,frameHeight:108})
+    this.load.audio("timer","public/assets/sounds/timer.mp3" )
+    this.load.audio("tiro","public/assets/sounds/tiro.mp3" )
   }
 
   create() {
+    this.anims.create({
+      key:"navemotor",
+      frames:this.anims.generateFrameNumbers ("navemotor",{start:0,end:2}),
+      frameRate:10,
+      repeat:-1
+
+    })
+    this.anims.create({
+      key:"asteroto",
+      frames:[{key:"asteroto",frame:0}],
+      frameRate:10,
+      repeat:-1
+      
+    })
+    this.anims.create({
+      key:"navequieta",
+      frames:[{key:"navemotor",frame:3}],
+      frameRate:10,
+      repeat:-1
+      
+    })
     this.scene.start("MainMenu");
   }
 }

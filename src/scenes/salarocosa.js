@@ -13,6 +13,8 @@ export class Salarocosa extends Phaser.Scene {
   
 
   create() {
+    this.timersonido=this.sound.add("timer")
+    this.tirosonido=this.sound.add("tiro")
     this.timercount=90
     this.speed=1
     this.score=0
@@ -37,7 +39,7 @@ export class Salarocosa extends Phaser.Scene {
     setInterval(()=>{
       if (this.cursors.space.isDown) {
         this.disparos.create(this.player.x,this.player.y,"disparo").setVelocity(0,300).setScale(0.4).setAngle(90)
-  
+        this.tirosonido.play()
         
       }
     },500)
@@ -46,6 +48,9 @@ export class Salarocosa extends Phaser.Scene {
 this.physics.add.overlap(this.player,this.asteroides,this.choque,null,this)
     setInterval(()=>{
       this.timercount--
+      if (this.timercount<=10) {
+        this.timersonido.play()
+      }
     },1000)  
     this.panel=this.add.image(this.cameras.main.centerX,this.cameras.main.centerY,"panel2").setActive(false)
     this.panel.visible=false
@@ -66,11 +71,16 @@ this.physics.add.overlap(this.player,this.asteroides,this.choque,null,this)
       this.boton.visible=true
       return}
     this.space.tilePositionY += this.speed
-    if (this.cursors.left.isDown) {
+    if (this.cursors.left.isDown && this.player.x>20) {
       this.player.x -= 3
+      this.player.anims.play("navemotor",true)
     }
-    if (this.cursors.right.isDown) {
+    if (this.cursors.right.isDown && this.player.x<780) {
       this.player.x += 3
+      this.player.anims.play("navemotor",true)
+    }
+    if (this.cursors.down.isUp&&this.cursors.up.isUp) {
+      this.player.anims.play("navequieta",true)
     }
 
     this.asteroides.children.iterate(element => {
@@ -83,7 +93,10 @@ this.physics.add.overlap(this.player,this.asteroides,this.choque,null,this)
   }
 
   hitasteroide(disparo,asteroide){
-    asteroide.destroy()
+    asteroide.anims.play("asteroto",true)
+    setTimeout(()=>{
+      asteroide.destroy()
+    },500)
     disparo.destroy()
     this.score++
   }
