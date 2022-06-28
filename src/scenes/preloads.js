@@ -43,8 +43,8 @@ export class Preloads extends Phaser.Scene {
     this.load.image("Creditos", "public/assets/images/endgame.png")
     this.load.spritesheet("navemotor","public/assets/images/animacion/navemotor.png",{frameWidth:104,frameHeight:109})
     this.load.spritesheet("asteroto","public/assets/images/animacion/asteroto.png",{frameWidth:94,frameHeight:108})
-    this.load.audio("timer","public/assets/sounds/timer.mp3" )
-    this.load.audio("tiro","public/assets/sounds/tiro.mp3" )
+    this.load.audio("timer","public/assets/sounds/timer1.mp3" )
+    this.load.audio("tiro","public/assets/sounds/tiro1.mp3" )
   }
 
   create() {
